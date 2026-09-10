@@ -110,5 +110,46 @@ function updateProfile($u_id, $game_type, $ranking, $social_link)
         return false;
     }
 }
+
+function getPendingUsers()
+{
+    $conn = dbConnection();
+
+    $sql = "SELECT u_id, name, uni_id, email_id, status
+            FROM users
+            WHERE status = 'Pending'";
+
+    $result = mysqli_query($conn, $sql);
+
+    return $result;
+}
+function updateUserStatus($u_id, $status)
+{
+    $conn = dbConnection();
+
+    $sql = "UPDATE users
+            SET status = ?
+            WHERE u_id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param(
+        $stmt,
+        "si",
+        $status,
+        $u_id
+    );
+
+    if(mysqli_stmt_execute($stmt))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
 ?>
 
