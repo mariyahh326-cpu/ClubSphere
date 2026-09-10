@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e8edf7;
+    min-height: 100vh;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px 10px;
+}
+
+
+                 /* LEFT SIDEBAR */
+
+.sidebar {
+    width: 220px;
+    min-height: 635px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 125px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.member-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.club-name {
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.welcome {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.user-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #16aee5;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a,
+.logout {
+    width: 100%;
+    height: 48px;
+    border-radius: 25px;
+    background-color: #edf1f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+}
+
+.menu a:hover,
+.logout:hover {
+    background-color: #e2e7f0;
+}
+
+.notification-dot {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 4px;
+}
+
+.logout {
+    width: 110px;
+    height: 36px;
+    margin-top: auto;
+}
+
+
+                   /* MAIN CONTENT */
+
+.main-content {
+    flex: 1;
+    padding-left: 30px;
+    padding-right: 15px;
+}
+              
+
+                    /* TOP CARDS */
+
+.top-cards {
+    display: flex;
+    justify-content:space-between;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.card {
+    width: 160px;
+    height: 175px;
+    background-color: white;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    max-width: 105px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.card p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+
+                  /* PRX */
+
+.team-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.results {
+    display: flex;
+    margin-top: 8px;
+}
+
+.results span {
+    width: 36px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.win {
+    background-color: #a9e88e;
+}
+
+.draw {
+    background-color: #d8d8d8;
+}
+
+.loss {
+    background-color: #ed7777;
+}
+
+
+                   /* TROPHY */
+
+.wins-card img {
+    width: 100px;
+    height: 90px;
+}
+
+
+           /* CHAMPION */
+
+.champion-card img {
+    width: 105px;
+    height: 100px;
+}
+
+
+                   /* EVENTS */
+
+.events-card {
+    width: 100%;
+    height: 395px;
+    background-color: white;
+    border-radius: 22px;
+    padding: 18px;
+}
+
+.events-card h2 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 5px 0 15px;
+}
+
+.events-box {
+    width: 100%;
+    height: 325px;
+    border: 7px solid #d8d8d8;
+    border-radius: 5px;
+    position: relative;
+}
+
+.events-top {
+    height: 25px;
+    border-bottom: 7px solid #d8d8d8;
+}
+
+.events-message {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
