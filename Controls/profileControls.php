@@ -1,0 +1,32 @@
+<?php
+
+session_start();
+
+require_once "../Models/userModels.php";
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $u_id = $_SESSION["u_id"];
+
+    $game_type = $_POST["game_type"];
+    $ranking = $_POST["ranking"];
+    $social_link = $_POST["social_link"];
+
+    $result = updateProfile(
+        $u_id,
+        $game_type,
+        $ranking,
+        $social_link
+    );
+
+    if($result)
+    {
+        echo "Profile Updated Successfully!";
+    }
+    else
+    {
+        echo "Profile Update Failed!";
+    }
+}
+
+?>
