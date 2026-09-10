@@ -82,5 +82,33 @@ function loginUser($name)
 
     return $result;
 }
+function updateProfile($u_id, $game_type, $ranking, $social_link)
+{
+    $conn = dbConnection();
+
+    $sql = "UPDATE users
+            SET game_type = ?, ranking = ?, social_link = ?
+            WHERE u_id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param(
+        $stmt,
+        "sssi",
+        $game_type,
+        $ranking,
+        $social_link,
+        $u_id
+    );
+
+    if(mysqli_stmt_execute($stmt))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 ?>
 
