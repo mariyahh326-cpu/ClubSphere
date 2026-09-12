@@ -1,8 +1,18 @@
 <?php
+session_start();
+
+
+
+
+
+
 
 require_once "../Controls/adminControls.php";
 
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html>

@@ -85,6 +85,13 @@ body {
     font-size: 14px;
 }
 
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
 .menu a:hover,
 .logout:hover {
     background-color: #e2e7f0;
@@ -128,8 +135,15 @@ body {
 }
 
 .card p {
-    margin: 8px 0 0;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    color: navy;
+}
+.card span {
+    font-family: Arial, sans-serif;
     font-size: 14px;
+    color: navy;
+    font-weight: 500;
 }
 
             /* EVENTS */

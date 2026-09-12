@@ -77,13 +77,14 @@ body {
     font-size: 11px;
 }
 
+
 .menu a:hover,
 .logout:hover {
     background-color: #dce2ef;
 }
 
-.logout {
-    margin-top: auto;
+.logout { 
+    margin-top: 80px;
 }
 
 
@@ -104,14 +105,16 @@ body {
     margin-bottom: 30px;
 }
 
-.card {
-    background-color: white;
-    border-radius: 20px;
-    height: 110px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+.card { 
+    background-color: white; 
+    border-radius: 20px; 
+    height: 180px; 
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .card img {
@@ -132,29 +135,23 @@ body {
     height: 50px;
 }
 
-.team-card p {
-    margin: 5px 0 0;
-    font-size: 13px;
-}
-
-
-/* MEMBERS CARD */
-
-.members-card {
-    gap: 15px;
-}
-
-.members-card p,
-.fund-card p {
-    font-size: 12px;
+.team-card p { 
+    margin: 5px 0 0; 
+    font-family: Georgia, serif;
+    font-size: 14px; 
+    color: navy;
+} 
+ 
+.members-card p, 
+.fund-card p,
+.members-card span, 
+.fund-card span { 
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: navy;
     margin: 0;
+    font-weight: 500;
 }
-
-.members-card span,
-.fund-card span {
-    font-size: 13px;
-}
-
 
 /* FUND CARD */
 
@@ -195,4 +192,33 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 11px;
+}
+
+
+
+
+.registration-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 250px;
+    height: 110px;
+    text-align: center;
+}
+
+.registration-card h2 {
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0 0 10px;
+}
+
+#registrationCount {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.registration-card p {
+    font-size: 10px;
+    margin: 5px 0 0;
 }

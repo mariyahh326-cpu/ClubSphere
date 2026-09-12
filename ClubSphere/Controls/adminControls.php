@@ -1,10 +1,15 @@
 <?php
 
-                      
-      
-session_start();
+if(session_status() == PHP_SESSION_NONE)
+{
+    session_start();
+}
+
 
 require_once "../Models/userModels.php";
+
+
+
 
   /*Prevents others viewing the admin works*/
 
@@ -20,19 +25,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $u_id = $_POST["u_id"];
 
+
+
                    /* FR4 - Approve */
+
+
+
     if(isset($_POST["approve"]))
     {
         updateUserStatus($u_id, "Approved");
     }
 
                            /* FR4 - Reject */
+
+
     else if(isset($_POST["reject"]))
     {
         updateUserStatus($u_id, "Rejected");
     }
 
+
+
+
+
          /* FR5 - Change Role */
+
+
+
     else if(isset($_POST["changeRole"]))
     {
         $role = $_POST["role"];
@@ -40,15 +59,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         updateUserRole($u_id, $role);
     }
 
+
+    
+
     header("Location:../Views/adminMembers.php");
     exit();
+
+
+
 }
-                 /* Pending users for FR4 */
-                 $pendingUsers = getPendingUsers();
-
-                 /* Approved users for FR5 */
-      $approvedUsers = getApprovedUsers();
 
 
+
+    $pendingUsers = getPendingUsers();
+
+    $approvedUsers = getApprovedUsers();
+
+    $totalMembers = getTotalApprovedMembers();
 
 ?>
+

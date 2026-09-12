@@ -21,45 +21,78 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if(password_verify($password, $user["password"]))
         {
             if($user["status"] == "Approved")
+
+
+
             {
+
+
+
                $_SESSION["u_id"] = $user["u_id"];
                $_SESSION["name"] = $user["name"];
                $_SESSION["role"] = $user["role"];
 
                if($user["role"]=="Admin"){
 
+
+
+
                 header("Location: ../Views/adminDashboard.php");
                 exit();
                }
-               else if($user["role"]=="Moderator"){
+               else if($user["role"]=="Moderator")
+               
+               
+               {
                 header("Location: ../Views/moderatorDashboard.php");
                 exit();
 
                }
                else{
+
+
+
                 header("Location: ../Views/memberDashboard.php");
                 exit();
 
                }
+
+
+
+
             }
-            else if($user["status"] == "Pending")
-            {
-                echo "Your account is waiting for approval.";
-            }
-            else if($user["status"] == "Rejected")
-            {
-                echo "Your account has been rejected.";
+            else if($user["status"] == "Pending") 
+            { 
+                header("Location: ../Views/login.php?message=" . urlencode("Your account is waiting for approval."));
+                exit();
+
+
+
+
+            } 
+            else if($user["status"] == "Rejected") 
+            { 
+                header("Location: ../Views/login.php?message=" . urlencode("Your account has been rejected."));
+                exit();
             }
         }
-        else
-        {
-            echo "Incorrect Password!";
+
+
+
+        
+        else 
+            { 
+                header("Location: ../Views/login.php?message=" . urlencode("Incorrect Password!"));
+                exit();
+            }
         }
-    }
-    else
-    {
-        echo "User not found!";
-    }
+    
+        else 
+            { 
+                header("Location: ../Views/login.php?message=" . urlencode("User not found!"));
+                exit();
+            }
+        
 }
 
 ?>

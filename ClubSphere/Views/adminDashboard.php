@@ -2,7 +2,10 @@
 
 session_start();
 
+require_once "../Controls/adminControls.php";
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -70,13 +73,15 @@ session_start();
             <div class="top-cards">
 
 
-                <div class="card team-card">
+            <div class="card team-card">
 
-                    <img src="../Images/prx.png">
+                <img src="../Images/prx.png">
 
-                    <p>PRX</p>
+                 <p>PRX</p>
 
-                </div>
+                
+
+</div>
 
 
                 <div class="card members-card">
@@ -85,7 +90,7 @@ session_start();
 
                     <p>Total Members:</p>
 
-                    <span>147</span>
+                    <span><?php echo $totalMembers; ?></span>
 
                 </div>
 
@@ -104,6 +109,10 @@ session_start();
             </div>
 
 
+
+
+
+
                         <!-- UPCOMING EVENTS -->
 
             <div class="events-card">
@@ -112,13 +121,25 @@ session_start();
 
                 <div class="events-box">
 
-                    <div class="events-top"></div>
+                   <div class="events-top"></div>
 
-                    <div class="events-message">
-
-                        There is no upcoming event currently
-
+                      <div class="events-message">There is no upcoming event currently
                     </div>
+
+
+
+
+
+                </div>
+                <div class="registration-card">
+
+                    <h2>New Registrations</h2>
+
+                    <div id="registrationCount">Loading...</div>
+
+                    <p>in the last 3 minutes</p>
+
+                </div>
 
                 </div>
 
@@ -129,6 +150,45 @@ session_start();
 
     </div>
 
+
+
+
+
+    <script>
+
+
+
+function loadRegistrationData()
+{
+    let ajax = new XMLHttpRequest();
+
+    ajax.open(
+        "GET",
+        "../Controls/registrationGraph.php",
+        true
+    );
+
+    
+
+    ajax.onload = function()
+    {
+        if(ajax.status == 200)
+        {
+            let data = JSON.parse(ajax.responseText);
+
+            document.getElementById("registrationCount").innerHTML = data.total;
+        }
+    };
+
+    ajax.send();
+}
+
+
+loadRegistrationData();
+
+setInterval(loadRegistrationData, 180000);
+
+</script>
 </body>
 
 </html>

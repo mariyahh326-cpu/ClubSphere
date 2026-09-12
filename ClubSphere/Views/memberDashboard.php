@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once "../Controls/memberDashboardControls.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -61,44 +63,47 @@ session_start();
 
                                       <!-- TOP CARDS -->
 
-            <div class="top-cards">
+    <div class="top-cards">
 
-                <div class="card team-card">
+          <div class="card">
 
-                    <img src="../Images/prx.png">
+          <img src="../Images/prx.png" alt="Gaming">
 
-                    <p>PRX</p>
+              <p>Gaming Preference</p>
 
-                    <div class="results">
+        <span>
+        <?php echo !empty($userProfile["game_type"]) ? $userProfile["game_type"] : "Not set"; ?>
+          </span>
 
-                        <span class="win">W</span>
-                        <span class="win">W</span>
-                        <span class="draw">D</span>
-                        <span class="loss">L</span>
-
-                    </div>
-
-                </div>
+             </div>
 
 
-                <div class="card wins-card">
+                <div class="card">
 
-                    <img src="../Images/trophy.png">
+                <img src="../Images/trophy.png" alt="Ranking">
 
-                    <p>Wins:</p>
+                 <p>Ranking</p>
 
-                </div>
+               <span>
+                <?php echo !empty($userProfile["ranking"]) ? $userProfile["ranking"] : "Not set"; ?>
+               </span>
+
+                 </div>
 
 
-                <div class="card champion-card">
+           <div class="card">
 
-                    <img src="../Images/champion.png">
+           <img src="../Images/champion.png" alt="Social Media">
 
-                    <p>Champion:</p>
+           <p>Social Media</p>
 
-                </div>
+             <span>
+                <?php echo !empty($userProfile["social_link"]) ? $userProfile["social_link"] : "Not set"; ?>
+             </span>
 
-            </div>
+          </div>
+
+   </div>
 
 
                                    <!-- UPCOMING EVENTS -->
